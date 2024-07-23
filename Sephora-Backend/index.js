@@ -3,12 +3,13 @@ require("dotenv").config();
 PORT = process.env.PORT || 3000;
 const connection = require("./config/db");
 const userRouter = require("./routes/user.routes");
+const productRouter = require("./routes/product.routes");
 
 const server = express();
 
-server.use(express.json())
+server.use(express.json());
 server.use("/user", userRouter);
-
+server.use("/product", productRouter);
 
 server.get("/", (_, res) => {
   res.status(200).send("Health check done, Server is Running.");
