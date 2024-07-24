@@ -10,6 +10,14 @@ const productSchema = mongoose.Schema({
   types: [{ type: String, required: true }],
 });
 
+productSchema.index({
+  title: "text",
+  category: "text",
+  description: "text",
+  tags: "text",
+  types: "text",
+});
+
 const ProductModel = mongoose.model("product", productSchema);
 
 module.exports = ProductModel;
