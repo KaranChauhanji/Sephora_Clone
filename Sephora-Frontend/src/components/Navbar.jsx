@@ -7,12 +7,6 @@ import {
   Image,
   Img,
   Input,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalHeader,
-  ModalOverlay,
   Popover,
   PopoverArrow,
   PopoverBody,
@@ -21,22 +15,23 @@ import {
   PopoverTrigger,
   SimpleGrid,
   Text,
-  useDisclosure,
 } from "@chakra-ui/react";
 import { BiBell, BiCurrentLocation, BiMessage } from "react-icons/bi";
 import { HiOutlineBuildingStorefront } from "react-icons/hi2";
 import { HiOutlineUserGroup } from "react-icons/hi2";
 import { PiBasketLight } from "react-icons/pi";
+import Login from "../pages/Login";
+import Signup from "../pages/Signup";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <Box>
       {/* *-----------------------------Header 1---------------------------* */}
 
       <Box
         textAlign={"center"}
-        p={['5px','5px',"18px","18px"]}
+        p={["5px", "5px", "18px", "18px"]}
         bgColor={"#C0DCF1"}
         fontSize={"14px"}
         fontWeight={700}
@@ -68,13 +63,15 @@ const Navbar = () => {
         m={"auto"}
         gap={["5px", "5px", "40px", "20px"]}
       >
+        <Link to={'/'}>
         <Text
           fontWeight={600}
           fontSize={["14px", "20px", "24px", "24px"]}
           textAlign={["center", "center", "right", "right"]}
-        >
+          >
           S E P H O R A
         </Text>
+          </Link>
         <Box>
           <Input placeholder="Search" fontWeight={550} borderRadius={"20px"} />
         </Box>
@@ -235,23 +232,10 @@ const Navbar = () => {
                   pt={"8px"}
                   pb={"14px"}
                 >
-                  <Button
-                    color={"white"}
-                    bgColor={"black"}
-                    borderRadius={"20px"}
-                    w={"50%"}
-                  >
-                    Sign In
-                  </Button>
-                  <Button
-                    color={"black"}
-                    border={"1px solid black"}
-                    bgColor={"white"}
-                    borderRadius={"20px"}
-                    w={"50%"}
-                  >
-                    Create Account
-                  </Button>
+                  <Box w={"50%"}>
+                    <Login />
+                  </Box>
+                  <Signup/>
                 </Flex>
                 <Divider color={"grey"} />
 
@@ -376,61 +360,11 @@ const Navbar = () => {
                   pt={"8px"}
                   pb={"14px"}
                 >
-
-
-
-
-
-<>
-<Button onClick={onOpen}
-                    color={"white"}
-                    bgColor={"black"}
-                    borderRadius={"20px"}
-                    w={"50%"}
-                  >
-                    Sign In
-                  </Button>
-
-<Modal isOpen={isOpen} onClose={onClose}>
-  <ModalOverlay />
-  <ModalContent>
-    <ModalHeader>Sign In</ModalHeader>
-    <ModalCloseButton />
-    <ModalBody>
-
-      <Text fontWeight={400} fontSize={'14px'}>Sign in or create an account to enjoy FREE standard shipping on all orders.
-</Text>
-
-<Input placeholder={'Email Address'}/>
-<Input placeholder={'Password'}/>
-<Text fontWeight={400} fontSize={'11px'}>By clicking “Sign In”, you (1) agree to the current version of our TERMS OF USE, and (2) have read Sephora’s Privacy Policy</Text>
-
-<Button>Sign In</Button>
-
-<Divider/>
-<Button onClick={onOpen}>Create Account</Button>
-
-    </ModalBody>
-  </ModalContent>
-</Modal>
-
-
-                    </>
-
-
-
-
-
+                  <Box w={"50%"}>
+                    <Login />
+                  </Box>
                   
-                  <Button
-                    color={"black"}
-                    border={"1px solid black"}
-                    bgColor={"white"}
-                    borderRadius={"20px"}
-                    w={"50%"}
-                  >
-                    Create Account
-                  </Button>
+                  <Signup/>
                 </Flex>
                 <Divider color={"grey"} />
               </PopoverBody>
@@ -449,9 +383,11 @@ const Navbar = () => {
                 bgColor={"white"}
                 _hover={{ bgColor: "white", borderBottom: "2px solid #333" }}
               >
+                <Link to={'/cart'}>
                 <Flex fontSize={"3xl"}>
                   <PiBasketLight />
                 </Flex>
+                </Link>
               </Button>
             </PopoverTrigger>
             <PopoverContent>
@@ -506,15 +442,17 @@ const Navbar = () => {
                     </Text>
                   </Flex>
                   <Divider />
+                  <Link to={'/cart'}>
                   <Button
                     bgColor={"white"}
                     color={"black"}
                     border={"1px solid black"}
                     w={"2x1"}
                     borderRadius={"20px"}
-                  >
+                    >
                     SEE DETAILS
                   </Button>
+                    </Link>
                 </SimpleGrid>
               </PopoverBody>
             </PopoverContent>
@@ -2883,20 +2821,33 @@ const Navbar = () => {
         </Text>
       </Flex>
 
+      {/* *------------------------Small Screen Navbar3-----------------------------* */}
 
-
-
-{/* *------------------------Small Screen Navbar3-----------------------------* */}
-
-
-<Flex display={['flex','flex','flex','none']} justifyContent={'space-around'} boxShadow={'base'} py={'10px'}>
-
-<Text fontSize={'14px'} fontWeight={700}>Sign In for FREE Shipping 🚚<Text fontWeight={500} fontSize={'12px'}>Don’t have an account?<span style={{fontSize:"10px", color:"blue", textDecoration:"underline", cursor:"pointer"}}> Create an account</span></Text></Text>
-<Button bgColor={"black"} color={"white"} borderRadius={"20px"}>Sign In</Button>
-</Flex>
-
-
-
+      <Flex
+        display={["flex", "flex", "flex", "none"]}
+        justifyContent={"space-around"}
+        boxShadow={"base"}
+        py={"10px"}
+      >
+        <Text fontSize={"14px"} fontWeight={700}>
+          Sign In for FREE Shipping 🚚
+          <Text fontWeight={500} fontSize={"12px"}>
+            Don’t have an account?
+            <span
+              style={{
+                fontSize: "10px",
+                color: "blue",
+                textDecoration: "underline",
+                cursor: "pointer",
+              }}
+            >
+              {" "}
+              Create an account
+            </span>
+          </Text>
+        </Text>
+       <Login/>
+      </Flex>
     </Box>
   );
 };
