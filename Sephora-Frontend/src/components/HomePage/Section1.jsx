@@ -1,3 +1,4 @@
+import { Box, Img, SimpleGrid, Text } from "@chakra-ui/react"
 
 const Section1 = () => {
 
@@ -10,23 +11,39 @@ const Section1 = () => {
           clr: "white",
         },
         {
-          img: "https://www.sephora.com/contentimages/2024-7-25-kiehls-since-1851-spf-site-desktop-home-page-rwd-hero-banner-1200x800-en-us.jpg?imwidth=545",
-          title: "Kiehl's Since 1851 Auto-Tone Treatment SPF 30",
-          description: "Target dark spots and protect against sun damage.",
-          bg: "#ABCF41",
+          img: "https://www.sephora.com/contentimages/2024-7-28-black-owned-brands-site-desktop-mobile-app-home-page-rwd-marketing-banner-800x534-en-us.jpg?imwidth=315",
+          title: "The Need-to-Know",
+          description: "Hot drops from Danessa Myricks Beauty, adwoa beauty, FORVR Mood, and EADEM.",
+          bg: "#97B9AB",
           clr: "black",
         },
         {
-          img: "https://www.sephora.com/contentimages/homepage/050124/2024-july-hair-story-site-home-page-RWD-hero-banner-air-dry-us-can-release-image-only-2000x2000.jpeg?imwidth=545",
-          title: "For Air-Dried Texture",
-          description: "Achieve the tousled look of your summer-hair dreams.",
-          bg: "#FFD670",
+          img: "https://www.sephora.com/contentimages/2024-cc-optimizations-bundle-a-site-mobile-home-page-rwd-marketing-banner-option-2-us-final.jpg?imwidth=315",
+          title: "Earn $150 in Credit Card Rewards‡‡ LEARN MORE & APPLY NOW▸",
+          description: "",
+          bg: "#5DB7B5",
           clr: "black",
         },
     ]
+    
 
   return (
-    <div>Section1</div>
+    
+    <Box> 
+        <SimpleGrid gridTemplateColumns={['1fr','1fr','repeat(2,1fr)','repeat(3,1fr)']} spacing={'20px'}  px={["2", "2", "10", "40"]}  py={'30px'}>
+
+        {cards.map((elem, i) => (
+            <SimpleGrid  color={elem.clr} key={i} cursor={"pointer"}>
+        <Box><Img src={elem.img} w={'100%'}/></Box>
+        <Box p={'20px'} textAlign={"left"} bgColor={elem.bg} h={'150px'}>
+          <Text fontWeight={700} fontSize={'20px'}>{elem.title}</Text>
+          <Text fontSize={'14px'} _hover={{textDecoration:"underline"}} mb={'5px'}>{elem.description}</Text>
+          <Text fontSize={'14px'}  fontWeight={700}>SHOP NOW ▸</Text>
+        </Box>
+        </SimpleGrid>
+        ))} 
+        </SimpleGrid>
+        </Box>
   )
 }
 

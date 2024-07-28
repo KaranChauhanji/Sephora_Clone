@@ -7,6 +7,12 @@ import {
   Image,
   Img,
   Input,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalHeader,
+  ModalOverlay,
   Popover,
   PopoverArrow,
   PopoverBody,
@@ -15,6 +21,7 @@ import {
   PopoverTrigger,
   SimpleGrid,
   Text,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { BiBell, BiCurrentLocation, BiMessage } from "react-icons/bi";
 import { HiOutlineBuildingStorefront } from "react-icons/hi2";
@@ -22,6 +29,7 @@ import { HiOutlineUserGroup } from "react-icons/hi2";
 import { PiBasketLight } from "react-icons/pi";
 
 const Navbar = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <Box>
       {/* *-----------------------------Header 1---------------------------* */}
@@ -368,7 +376,13 @@ const Navbar = () => {
                   pt={"8px"}
                   pb={"14px"}
                 >
-                  <Button
+
+
+
+
+
+<>
+<Button onClick={onOpen}
                     color={"white"}
                     bgColor={"black"}
                     borderRadius={"20px"}
@@ -376,6 +390,38 @@ const Navbar = () => {
                   >
                     Sign In
                   </Button>
+
+<Modal isOpen={isOpen} onClose={onClose}>
+  <ModalOverlay />
+  <ModalContent>
+    <ModalHeader>Sign In</ModalHeader>
+    <ModalCloseButton />
+    <ModalBody>
+
+      <Text fontWeight={400} fontSize={'14px'}>Sign in or create an account to enjoy FREE standard shipping on all orders.
+</Text>
+
+<Input placeholder={'Email Address'}/>
+<Input placeholder={'Password'}/>
+<Text fontWeight={400} fontSize={'11px'}>By clicking “Sign In”, you (1) agree to the current version of our TERMS OF USE, and (2) have read Sephora’s Privacy Policy</Text>
+
+<Button>Sign In</Button>
+
+<Divider/>
+<Button onClick={onOpen}>Create Account</Button>
+
+    </ModalBody>
+  </ModalContent>
+</Modal>
+
+
+                    </>
+
+
+
+
+
+                  
                   <Button
                     color={"black"}
                     border={"1px solid black"}

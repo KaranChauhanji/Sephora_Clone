@@ -23,7 +23,8 @@ const Footer = () => {
         fontSize={"14px"}
         fontWeight={700}
         textAlign={"center"}
-        p={"5px"}
+        mt={'30px'}
+        p={"10px"}
       >
         {" "}
         <Text>Website feedback? Let us know ▸</Text>
@@ -408,6 +409,7 @@ const Footer = () => {
                       placeholder="Mobile Phone Number"
                       border={"none"}
                       bgColor={"white"}
+                      color={"black"}
                     />
                     <Button
                       bgColor={"black"}
@@ -430,6 +432,7 @@ const Footer = () => {
                       placeholder="Enter your email address"
                       border={"none"}
                       bgColor={"white"}
+                      color={"black"}
                     />
                     <Button
                       bgColor={"black"}
