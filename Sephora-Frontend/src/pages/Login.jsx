@@ -12,6 +12,7 @@ import {
   SimpleGrid,
   Text,
   useDisclosure,
+  useToast, // Import useToast
 } from "@chakra-ui/react";
 import Signup from "./Signup";
 import { useDispatch } from "react-redux";
@@ -21,14 +22,40 @@ import { loginUser } from "../Redux/Login/actions";
 const Login = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const dispatch = useDispatch();
+  const toast = useToast(); 
+
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(loginUser(credentials));
+
+ 
+    const response = await dispatch(loginUser(credentials));
+    
+    if (response.success) {
+      // Show success toast
+      toast({
+        title: "Login Successful.",
+        description: response.message,
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+      onClose(); 
+   
+      toast({
+        title: "Login Failed.",
+        description: response.message,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    }
   };
 
   return (

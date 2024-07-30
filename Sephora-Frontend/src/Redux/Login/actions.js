@@ -8,9 +8,10 @@ export const loginUser = (credentials) => async (dispatch) => {
 
     dispatch({ type: LOGIN_SUCCESS, payload: resp.data.token });
 
-    alert("Login successful");
+    return { success: true, message: "Login successful" };
   } catch (error) {
     dispatch({ type: LOGIN_NOT });
-    console.log(error.message);
+
+    return { success: false, message: error.message || "Login failed" };
   }
 };
