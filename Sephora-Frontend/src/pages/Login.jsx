@@ -15,45 +15,43 @@ import {
   useToast, // Import useToast
 } from "@chakra-ui/react";
 import Signup from "./Signup";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { loginUser } from "../Redux/Login/actions";
 
 const Login = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const dispatch = useDispatch();
-  const toast = useToast(); 
+  const { isLogin } = useSelector((state) => state.loginState);
+
+  const toast = useToast();
 
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
   });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
- 
-    const response = await dispatch(loginUser(credentials));
-    
-    if (response.success) {
-      // Show success toast
+    dispatch(loginUser(credentials));
+
+    if (isLogin) {
       toast({
-        title: "Login Successful.",
-        description: response.message,
+        title: "Login Successful",
+        description: `Congratulations you are login!`,
         status: "success",
-        duration: 5000,
+        duration: 3000,
         isClosable: true,
-        position: "top",
       });
-      onClose(); 
-   
+      onClose();
+    } else {
       toast({
-        title: "Login Failed.",
-        description: response.message,
+        title: "Error",
+        description: "An error occurred while login your account.",
         status: "error",
-        duration: 5000,
+        duration: 3000,
         isClosable: true,
-        position: "top",
       });
     }
   };

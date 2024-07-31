@@ -17,12 +17,12 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { useState } from "react"; // Import useState for managing form state
-import axios from 'axios'; // Import axios for making HTTP requests
+import axios from "axios"; // Import axios for making HTTP requests
 import Login from "./Login";
 
 const Signup = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  
+
   // State to manage form inputs
   const [formData, setFormData] = useState({
     username: "",
@@ -59,7 +59,7 @@ const Signup = () => {
 
     // Send POST request to backend
     try {
-      const response = await axios.post('http://localhost:3000/user/register', {
+      const response = await axios.post("http://localhost:3000/user/register", {
         username: formData.username,
         email: formData.email,
         password: formData.password,
@@ -76,8 +76,13 @@ const Signup = () => {
           duration: 3000,
           isClosable: true,
         });
-        onClose(); // Close the modal
-        setFormData({ // Reset form data
+        onClose();
+
+        const isAuthUser = { isAuth: true , data: formData.username};
+
+        localStorage.setItem("user", JSON.stringify(isAuthUser));
+        setFormData({
+          // Reset form data
           username: "",
           email: "",
           password: "",
@@ -90,7 +95,9 @@ const Signup = () => {
       console.error("Error creating account:", error);
       toast({
         title: "Error",
-        description: error.response?.data?.message || "An error occurred while creating your account.",
+        description:
+          error.response?.data?.message ||
+          "An error occurred while creating your account.",
         status: "error",
         duration: 3000,
         isClosable: true,
