@@ -13,27 +13,19 @@ import Navbar from "../components/Navbar";
 
 import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { getCartItems } from "../Redux/Cart/action";
+import { Link } from "react-router-dom";
+import GetSinglePro from "../components/GetSinglePro";
 const CartPage = () => {
-  const [data, setData] = useState([]);
 
-  const fetchData = async () => {
-    const { token } = JSON.parse(localStorage.getItem("user"));
-    try {
-      const res = await axios.get(`http://localhost:3000/cart`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      console.log(res.data.items);
-      setData(res.data.items);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-
+  
+  const dispatch = useDispatch()
+  const data = useSelector((state)=>state.cartData)
+  const {loading} = useSelector((state)=>state.loading)
+  
   useEffect(() => {
-    fetchData();
+    dispatch(getCartItems)
   }, []);
 
   return (
@@ -53,7 +45,33 @@ const CartPage = () => {
           ]}
           alignItems={"start"}
         >
-          <SimpleGrid gap={2}>
+            <SimpleGrid gap={2}>
+            {data ? (
+              data.map((elem,i) => (
+                <GetSinglePro singleData={elem} key={i}/>
+               
+              ))
+            ) : (
+              <Box mt={5}>
+                <Divider mb={10} bg={"grey"} h={0.8} />
+
+                <Text fontSize={"18px"} fontWeight={400} mb={3}>
+                  Your shopping cart is empty. Please add at least one item to
+                  your cart before checking out.
+                </Text>
+                <Link to={"/"}>
+                  <Button
+                    mb={4}
+                    _hover={{ color: "white" }}
+                    bg={"#296293"}
+                    color={"white"}
+                  >
+                    Continue Shopping
+                  </Button>
+                </Link>
+                <Divider mb={10} bg={"grey"} h={0.8} />
+              </Box>
+            )}
           </SimpleGrid>
 
           <SimpleGrid gap={8} p={5}>

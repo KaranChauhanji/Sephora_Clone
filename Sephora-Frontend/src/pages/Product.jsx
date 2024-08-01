@@ -23,11 +23,11 @@ const Product = () => {
   const fetchData = async () => {
     try {
       const res = await axios.get(`http://localhost:3000/product/${id}`);
-      // console.log(res.data.Product);
+    
       setData(res.data.Product);
       setSelectedImage(res.data.Product.images[0]);
     } catch (error) {
-      console.error("Error fetching product data:", error.message); // Improve error message
+      console.error("Error fetching product data:", error.message);
       toast({
         title: "Error Fetching Data",
         description: "Failed to load product details. Please try again later.",
@@ -45,7 +45,7 @@ const Product = () => {
 
   const handleClick = async () => {
     try {
-      // Check if user details exist in local storage
+    
       const user = localStorage.getItem("user");
       if (!user) {
         throw new Error("User not logged in");
@@ -67,7 +67,7 @@ const Product = () => {
         }
       );
 
-      if (response.status === 201) {
+  
         toast({
           title: "Product Added to Cart",
           description: `${data.title} has been successfully added to your cart.`,
@@ -75,10 +75,8 @@ const Product = () => {
           duration: 3000,
           isClosable: true,
           position: "top",
-        });
-      } else {
-        throw new Error(`Unexpected response status: ${response.status}`);
-      }
+     
+      } )
     } catch (error) {
       console.error("Error adding product to cart:", error);
 

@@ -35,6 +35,7 @@ const Navbar2 = () => {
     handleNavigation(
       `/products?category=${category.replace(" & ", "%20%26%20")}`
     );
+    onclose()
 
   }
 
@@ -262,94 +263,70 @@ const Navbar2 = () => {
                     Face
                   </Text>
                   <SimpleGrid fontSize={"14px"} spacing={"5px"}>
-                    <TextCreate text={"Foundation"} />
-                    <TextCreate text={"BB & CC Cream"} />
-                    <TextCreate text={"Tinted Moisturizer"} />
-                    <TextCreate text={"Concealer"} />
-                    <TextCreate text={"Face Primer"} />
-                    <TextCreate text={"Setting Spray & Powder"} />
-                    <TextCreate text={"Highlighter"} />
-                    <TextCreate text={"Contour"} />
-                    <TextCreate text={"Color Correct"} />
-                    <TextCreate text={"Face Sets"} />
+                    <TextCreate text={"Foundation"} category={"Makeup"}/>
+                    <TextCreate text={"BB & CC Cream"} category={"Makeup"}/>
+                    <TextCreate text={"Tinted Moisturizer"} category={"Makeup"}/>
+                    <TextCreate text={"Concealer"} category={"Makeup"}/>
+                    <TextCreate text={"Face Primer"} category={"Makeup"}/>
+                    <TextCreate text={"Setting Spray & Powder"} category={"Makeup"}/>
+                    <TextCreate text={"Highlighter"} category={"Makeup"}/>
+                    <TextCreate text={"Contour"} category={"Makeup"}/>
+                    <TextCreate text={"Color Correct"} category={"Makeup"}/>
+                    <TextCreate text={"Face Sets"} category={"Makeup"}/>
                   </SimpleGrid>
                 </SimpleGrid>
 
                 <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                  <Text
-                    fontSize={"14px"}
-                    fontWeight={700}
-                    _hover={{ textDecoration: "underline" }}
-                  >
-                    Eye
-                  </Text>
+                  <TextCreate text={"Eye"} fontWeight={700} category={"Makeup"}/>
                   <SimpleGrid fontSize={"14px"} spacing={"5px"}>
-                    <TextCreate text={"Eye Palettes"} />
-                    <TextCreate text={"Mascara"} />
-                    <TextCreate text={"Eyeliner"} />
-                    <TextCreate text={"Eyebrow"} />
-                    <TextCreate text={"False Eyelashes"} />
-                    <TextCreate text={"Eyeshadow"} />
-                    <TextCreate text={"Eyelash Serums"} />
-                    <TextCreate text={"Eyebrow Serums"} />
-                    <TextCreate text={"Eye Primer"} />
-                    <TextCreate text={"Eye Sets"} />
+                    <TextCreate text={"Eye Palettes"} category={"Makeup"}/>
+                    <TextCreate text={"Mascara"} category={"Makeup"}/>
+                    <TextCreate text={"Eyeliner"} category={"Makeup"}/>
+                    <TextCreate text={"Eyebrow"} category={"Makeup"}/>
+                    <TextCreate text={"False Eyelashes"} category={"Makeup"}/>
+                    <TextCreate text={"Eyeshadow"} category={"Makeup"}/>
+                    <TextCreate text={"Eyelash Serums"} category={"Makeup"}/>
+                    <TextCreate text={"Eyebrow Serums"} category={"Makeup"}/>
+                    <TextCreate text={"Eye Primer"} category={"Makeup"}/>
+                    <TextCreate text={"Eye Sets"} category={"Makeup"}/>
                   </SimpleGrid>
                 </SimpleGrid>
 
                 <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                  <Text
-                    fontSize={"14px"}
-                    fontWeight={700}
-                    _hover={{ textDecoration: "underline" }}
-                  >
-                    Lip
-                  </Text>
+                  <TextCreate text={"Lips"} fontWeight={700} category={"Makeup"}/>
                   <SimpleGrid fontSize={"14px"} spacing={"5px"}>
-                    <TextCreate text={"Lip Gloss"} />
-                    <TextCreate text={"Lipstick"} />
-                    <TextCreate text={"Lip Oil"} />
-                    <TextCreate text={"Lip Plumper"} />
-                    <TextCreate text={"Lip Balms & Treatments"} />
-                    <TextCreate text={"Liquid Lipstick"} />
-                    <TextCreate text={"Lip Liner"} />
-                    <TextCreate text={"Lip Stain"} />
-                    <TextCreate text={"Lip Sets"} />
+                    <TextCreate text={"Lip Gloss"} category={"Makeup"}/>
+                    <TextCreate text={"Lipstick"} category={"Makeup"}/>
+                    <TextCreate text={"Lip Oil"} category={"Makeup"}/>
+                    <TextCreate text={"Lip Plumper"} category={"Makeup"}/>
+                    <TextCreate text={"Lip Balms & Treatments"} category={"Makeup"}/>
+                    <TextCreate text={"Liquid Lipstick"} category={"Makeup"}/>
+                    <TextCreate text={"Lip Liner"} category={"Makeup"}/>
+                    <TextCreate text={"Lip Stain"} category={"Makeup"}/>
+                    <TextCreate text={"Lip Sets"} category={"Makeup"}/>
                   </SimpleGrid>
                 </SimpleGrid>
 
                 <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                  <Text
-                    fontSize={"14px"}
-                    fontWeight={700}
-                    _hover={{ textDecoration: "underline" }}
-                  >
-                    Cheek
-                  </Text>
+                  <TextCreate text={"Cheek"} category={"Makeup"} fontWeight={700}/>
                   <SimpleGrid fontSize={"14px"} spacing={"5px"}>
-                    <TextCreate text={"Blush"} />
-                    <TextCreate text={"Bronzer"} />
-                    <TextCreate text={"Highlighter"} />
-                    <TextCreate text={"Contour"} />
-                    <TextCreate text={"Cheek Palettes"} />
+                    <TextCreate text={"Blush"} category={"Makeup"}/>
+                    <TextCreate text={"Bronzer"} category={"Makeup"}/>
+                    <TextCreate text={"Highlighter"} category={"Makeup"}/>
+                    <TextCreate text={"Contour"} category={"Makeup"}/>
+                    <TextCreate text={"Cheek Palettes"} category={"Makeup"}/>
                   </SimpleGrid>
                 </SimpleGrid>
 
                 <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                  <Text
-                    fontSize={"14px"}
-                    fontWeight={700}
-                    _hover={{ textDecoration: "underline" }}
-                  >
-                    Help Me Choose
-                  </Text>
+                  <TextCreate text={"Help me to Choose"} category={"Makeup"} fontWeight={700}/>
                   <SimpleGrid fontSize={"14px"} spacing={"5px"}>
-                    <TextCreate text={"Monochrome Makeup"} />
-                    <TextCreate text={"Easy Eye Makeup"} />
-                    <TextCreate text={"Guide To Foundations"} />
-                    <TextCreate text={"Clean Makeup Guide"} />
-                    <TextCreate text={"No Makeup Makeup"} />
-                    <TextCreate text={"Super-Natural Sculpting"} />
+                    <TextCreate text={"Monochrome Makeup"} category={"Makeup"}/>
+                    <TextCreate text={"Easy Eye Makeup"} category={"Makeup"}/>
+                    <TextCreate text={"Guide To Foundations"} category={"Makeup"}/>
+                    <TextCreate text={"Clean Makeup Guide"} category={"Makeup"}/>
+                    <TextCreate text={"No Makeup Makeup"} category={"Makeup"}/>
+                    <TextCreate text={"Super-Natural Sculpting"} category={"Makeup"}/>
                   </SimpleGrid>
                 </SimpleGrid>
               </SimpleGrid>
@@ -382,141 +359,88 @@ const Navbar2 = () => {
               >
                 <SimpleGrid spacing={"20px"}>
                   <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                    <Text
-                      fontSize={"14px"}
-                      fontWeight={700}
-                      _hover={{ textDecoration: "underline" }}
-                    >
-                      Cleansers
-                    </Text>
+                   <TextCreate text={"Cleansers"} fontWeight={700} category={"Skincare"}/>
                     <SimpleGrid fontSize={"14px"} spacing={"5px"}>
-                      <TextCreate text={"Face Wash & Cleansers"} />
-                      <TextCreate text={"Exfoliators"} />
-                      <TextCreate text={"Makeup Removers"} />
-                      <TextCreate text={"Face Wipes"} />
-                      <TextCreate text={"Toners"} />
+                      <TextCreate text={"Face Wash & Cleansers"} category={"Skincare"}/>
+                      <TextCreate text={"Exfoliators"} category={"Skincare"}/>
+                      <TextCreate text={"Makeup Removers"} category={"Skincare"}/>
+                      <TextCreate text={"Face Wipes"} category={"Skincare"}/>
+                      <TextCreate text={"Toners"} category={"Skincare"}/>
                     </SimpleGrid>
                   </SimpleGrid>
 
                   <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                    <Text
-                      fontSize={"14px"}
-                      fontWeight={700}
-                      _hover={{ textDecoration: "underline" }}
-                    >
-                      Moisturizers
-                    </Text>
+                   <TextCreate text={' Moisturizers'} fontWeight={700} category={"Skincare"}/>
                     <SimpleGrid fontSize={"14px"} spacing={"5px"}>
-                      <TextCreate text={"Night Creams"} />
-                      <TextCreate text={"Face Oils"} />
-                      <TextCreate text={"Mists & Essences"} />
-                      <TextCreate text={"BB & CC Cream"} />
+                      <TextCreate text={"Night Creams"} category={"Skincare"}/>
+                      <TextCreate text={"Face Oils"} category={"Skincare"}/>
+                      <TextCreate text={"Mists & Essences"} category={"Skincare"}/>
+                      <TextCreate text={"BB & CC Cream"} category={"Skincare"}/>
                     </SimpleGrid>
                   </SimpleGrid>
                 </SimpleGrid>
 
                 <SimpleGrid spacing={"20px"}>
                   <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                    <Text
-                      fontSize={"14px"}
-                      fontWeight={700}
-                      _hover={{ textDecoration: "underline" }}
-                    >
-                      Treatments
-                    </Text>
+                    <TextCreate text={"Treatments"} fontWeight={700} category={"Skincare"}/>
                     <SimpleGrid fontSize={"14px"} spacing={"5px"}>
-                      <TextCreate text={"Face Serums"} />
-                      <TextCreate text={"Acne & Blemish Treatments"} />
-                      <TextCreate text={"Facial Peels"} />
+                      <TextCreate text={"Face Serums"} category={"Skincare"}/>
+                      <TextCreate text={"Acne & Blemish Treatments"} category={"Skincare"}/>
+                      <TextCreate text={"Facial Peels"} category={"Skincare"}/>
                     </SimpleGrid>
                   </SimpleGrid>
 
                   <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                    <Text
-                      fontSize={"14px"}
-                      fontWeight={700}
-                      _hover={{ textDecoration: "underline" }}
-                    >
-                      Masks
-                    </Text>
+                   <TextCreate text={'Masks'} fontWeight={700} category={"Skincare"}/>
                     <SimpleGrid fontSize={"14px"} spacing={"5px"}>
-                      <TextCreate text={"Face Masks"} />
-                      <TextCreate text={"Sheet Masks"} />
-                      <TextCreate text={"Eye Masks"} />
+                      <TextCreate text={"Face Masks"} category={"Skincare"}/>
+                      <TextCreate text={"Sheet Masks"} category={"Skincare"}/>
+                      <TextCreate text={"Eye Masks"} category={"Skincare"}/>
                     </SimpleGrid>
                   </SimpleGrid>
                 </SimpleGrid>
 
                 <SimpleGrid spacing={"20px"}>
                   <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                    <Text
-                      fontSize={"14px"}
-                      fontWeight={700}
-                      _hover={{ textDecoration: "underline" }}
-                    >
-                      Eye Care
-                    </Text>
+                   <TextCreate text={"Eye Care"} fontWeight={700} category={"Skincare"}/>
                     <SimpleGrid fontSize={"14px"} spacing={"5px"}>
-                      <TextCreate text={"Eye Creams & Treatments"} />
-                      <TextCreate text={"Eye Masks"} />
+                      <TextCreate text={"Eye Creams & Treatments"} category={"Skincare"}/>
+                      <TextCreate text={"Eye Masks"} category={"Skincare"}/>
                     </SimpleGrid>
                   </SimpleGrid>
 
-                  <Text
-                    fontSize={"14px"}
-                    fontWeight={700}
-                    _hover={{ textDecoration: "underline" }}
-                  >
-                    Lip Balms & Treatments
-                  </Text>
+                 <TextCreate text={'Lip Balms & Treatments'} fontWeight={700} category={"Skincare"}/>
                 </SimpleGrid>
 
                 <SimpleGrid spacing={"20px"}>
                   <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                    <Text
-                      fontSize={"14px"}
-                      fontWeight={700}
-                      _hover={{ textDecoration: "underline" }}
-                    >
-                      Sunscreen
-                    </Text>
+                    <TextCreate text={"Sunscreen"} fontWeight={700} category={"Skincare"}/>
                     <SimpleGrid fontSize={"14px"} spacing={"5px"}>
-                      <TextCreate text={"Face Sunscreen"} />
-                      <TextCreate text={"Body Sunscreen"} />
+                      <TextCreate text={"Face Sunscreen"} category={"Skincare"}/>
+                      <TextCreate text={"Body Sunscreen"} category={"Skincare"}/>
                     </SimpleGrid>
                   </SimpleGrid>
 
                   <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                    <Text
-                      fontSize={"14px"}
-                      fontWeight={700}
-                      _hover={{ textDecoration: "underline" }}
-                    >
-                      Wellness
-                    </Text>
+                    <TextCreate text={"Wellness"} fontWeight={700} category={"Skincare"}/>
                     <SimpleGrid fontSize={"14px"} spacing={"5px"}>
-                      <TextCreate text={"Supplements"} />
-                      <TextCreate text={"Feminine Care"} />
+                      <TextCreate text={"Supplements"} category={"Skincare"}/>
+                      <TextCreate text={"Feminine Care"} category={"Skincare"}/>
                     </SimpleGrid>
                   </SimpleGrid>
                 </SimpleGrid>
 
                 <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                  <Text
-                    fontSize={"14px"}
-                    fontWeight={700}
-                    _hover={{ textDecoration: "underline" }}
-                  >
-                    Shop By Concern
-                  </Text>
+                  
+                  <TextCreate text={'Shop By Concern'} fontWeight={700} category={"Skincare"}/>
                   <SimpleGrid fontSize={"14px"} spacing={"5px"}>
-                    <TextCreate text={"Acne & Blemishes"} />
-                    <TextCreate text={"Anti-Aging"} />
-                    <TextCreate text={"Dark Spots"} />
-                    <TextCreate text={"Pores"} />
-                    <TextCreate text={"Dryness"} />
-                    <TextCreate text={"Fine Lines & Wrinkles"} />
-                    <TextCreate text={"Dullness"} />
+                    <TextCreate text={"Acne & Blemishes"} category={"Skincare"}/>
+                    <TextCreate text={"Anti-Aging"} category={"Skincare"}/>
+                    <TextCreate text={"Dark Spots"} category={"Skincare"}/>
+                    <TextCreate text={"Pores"} category={"Skincare"}/>
+                    <TextCreate text={"Dryness"} category={"Skincare"}/>
+                    <TextCreate text={"Fine Lines & Wrinkles"} category={"Skincare"}/>
+                    <TextCreate text={"Dullness"} category={"Skincare"}/>
                   </SimpleGrid>
                 </SimpleGrid>
               </SimpleGrid>
@@ -644,25 +568,25 @@ const Navbar2 = () => {
               >
                 <SimpleGrid spacing={"20px"}>
                   <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                    <TextCreate text={"Women"} fontWeight={700} />
-                    <TextCreate text={"Perfume"} />
-                    <TextCreate text={"Perfume Oils"} />
-                    <TextCreate text={"Rollerballs & Travel Size"} />
-                    <TextCreate text={"Body Mist & Hair Mist"} />
+                    <TextCreate text={"Women"} fontWeight={700} category={"Makeup"}/>
+                    <TextCreate text={"Perfume"} category={"Makeup"}/>
+                    <TextCreate text={"Perfume Oils"} category={"Makeup"}/>
+                    <TextCreate text={"Rollerballs & Travel Size"} category={"Makeup"}/>
+                    <TextCreate text={"Body Mist & Hair Mist"} category={"Makeup"}/>
                   </SimpleGrid>
 
                   <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                    <TextCreate text={"Men"} fontWeight={700} />
-                    <TextCreate text={"Cologne"} />
+                    <TextCreate text={"Men"} fontWeight={700} category={"Makeup"}/>
+                    <TextCreate text={"Cologne"} category={"Makeup"}/>
                   </SimpleGrid>
                 </SimpleGrid>
 
                 <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                  <TextCreate text={"Value & Gift Sets"} fontWeight={700} />
-                  <TextCreate text={"Perfume Gift Sets"} />
-                  <TextCreate text={"Cologne Gift Sets"} />
-                  <TextCreate text={"Home Gift Sets"} />
-                  <TextCreate text={"Sephora Favorites"} />
+                  <TextCreate text={"Value & Gift Sets"} fontWeight={700} category={"Makeup"}/>
+                  <TextCreate text={"Perfume Gift Sets"} category={"Makeup"}/>
+                  <TextCreate text={"Cologne Gift Sets"} category={"Makeup"}/>
+                  <TextCreate text={"Home Gift Sets"} category={"Makeup"}/>
+                  <TextCreate text={"Sephora Favorites"} category={"Makeup"}/>
                 </SimpleGrid>
 
                 <SimpleGrid spacing={"20px"}>
@@ -670,47 +594,50 @@ const Navbar2 = () => {
                     <TextCreate
                       text={"Candles & Home Scents"}
                       fontWeight={700}
+                      category={"Bath And Body"}
                     />
-                    <TextCreate text={"Candles"} />
-                    <TextCreate text={"Diffusers"} />
+                    <TextCreate text={"Candles"} category={"Bath And Body"}/>
+                    <TextCreate text={"Diffusers"} category={"Bath And Body"}/>
                   </SimpleGrid>
 
                   <SimpleGrid spacing={"7px"} cursor={"pointer"}>
                     <TextCreate
                       text={"Shop by Fragrance Family"}
                       fontWeight={700}
+                      category={"Bath And Body"}
                     />
-                    <TextCreate text={"Floral"} />
-                    <TextCreate text={"Warm & Spicy"} />
-                    <TextCreate text={"Fresh"} />
-                    <TextCreate text={"Earthy & Woody"} />
+                    <TextCreate text={"Floral"} category={"Bath And Body"}/>
+                    <TextCreate text={"Warm & Spicy"} category={"Bath And Body"}/>
+                    <TextCreate text={"Fresh"} category={"Bath And Body"} />
+                    <TextCreate text={"Earthy & Woody"} category={"Bath And Body"}/>
                   </SimpleGrid>
                 </SimpleGrid>
 
                 <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                  <TextCreate text={"New"} fontWeight={700} />
-                  <TextCreate text={"Bestsellers"} fontWeight={700} />
-                  <TextCreate text={"Clean Fragrance"} fontWeight={700} />
-                  <TextCreate text={"Vegan Fragrance"} fontWeight={700} />
-                  <TextCreate text={"Mini Size"} fontWeight={700} />
-                  <TextCreate text={"Value Size"} fontWeight={700} />
-                  <TextCreate text={"Refillable Fragrance"} fontWeight={700} />
-                  <TextCreate text={"Luxury Fragrance"} fontWeight={700} />
+                  <TextCreate text={"New"} fontWeight={700} category={"Bath And Body"}/>
+                  <TextCreate text={"Bestsellers"} fontWeight={700} category={"Bath And Body"}/>
+                  <TextCreate text={"Clean Fragrance"} fontWeight={700} category={"Bath And Body"}/>
+                  <TextCreate text={"Vegan Fragrance"} fontWeight={700} category={"Bath And Body"}/>
+                  <TextCreate text={"Mini Size"} fontWeight={700} category={"Bath And Body"}/>
+                  <TextCreate text={"Value Size"} fontWeight={700} category={"Bath And Body"}/>
+                  <TextCreate text={"Refillable Fragrance"} fontWeight={700} category={"Bath And Body"}/>
+                  <TextCreate text={"Luxury Fragrance"} fontWeight={700} category={"Bath And Body"}/>
                   <TextCreate
                     text={"Black-Owned Brands Fragrance"}
                     fontWeight={700}
+                    category={"Bath And Body"}
                   />
                 </SimpleGrid>
 
                 <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                  <TextCreate text={"Help Me Choose"} fontWeight={700} />
-                  <TextCreate text={"The New & Now Fragrance Edit"} />
-                  <TextCreate text={"Clean Fragrance Guide"} />
-                  <TextCreate text={"Fragrance Guide"} />
-                  <TextCreate text={"Fragrance Notes Guide"} />
-                  <TextCreate text={"Best Affordable Fragrance"} />
-                  <TextCreate text={"Niche Fragrances"} />
-                  <TextCreate text={"Next Big Thing"} />
+                  <TextCreate text={"Help Me Choose"} fontWeight={700} category={"Bath And Body"}/>
+                  <TextCreate text={"The New & Now Fragrance Edit"} category={"Bath And Body"}/>
+                  <TextCreate text={"Clean Fragrance Guide"} category={"Bath And Body"}/>
+                  <TextCreate text={"Fragrance Guide"} category={"Bath And Body"}/>
+                  <TextCreate text={"Fragrance Notes Guide"} category={"Bath And Body"}/>
+                  <TextCreate text={"Best Affordable Fragrance"} category={"Bath And Body"}/>
+                  <TextCreate text={"Niche Fragrances"} category={"Bath And Body"}/>
+                  <TextCreate text={"Next Big Thing"} category={"Bath And Body"}/>
                 </SimpleGrid>
               </SimpleGrid>
             </PopoverBody>

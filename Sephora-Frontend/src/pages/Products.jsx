@@ -34,7 +34,7 @@ const Products = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [category]);
 
   const handleClick = (id) => {
     navigate(`/products/${id}`);
