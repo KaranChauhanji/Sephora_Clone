@@ -1,10 +1,10 @@
 const CartModel = require("../../models/cart.model");
 
 const removeFromCart = async (req, res) => {
-  const { productID } = req.params;
+  const { productId } = req.params;
 
   try {
-    const cartItem = await CartModel.findOne({ productID });
+    const cartItem = await CartModel.findOne({ productId });
 
     if (!cartItem) {
       return res.status(404).send({ message: "Item not found in cart" });

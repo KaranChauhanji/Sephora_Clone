@@ -10,19 +10,33 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
+import {useNavigate} from 'react-router-dom'
 
 const Navbar2 = () => {
-  const TextCreate = ({ text, fontWeight }) => {
+
+  const  handleNavigation = useNavigate()
+
+  const TextCreate = ({ text, fontWeight, category }) => {
     return (
       <Text
         _hover={{ textDecoration: "underline" }}
         fontWeight={fontWeight}
         fontSize={"14px"}
+        onClick={()=>handleClick(category)}
       >
         {text}
       </Text>
     );
   };
+
+  const handleClick = (elem)=>{
+    const category = elem
+    handleNavigation(`/products`)
+    handleNavigation(
+      `/products?category=${category.replace(" & ", "%20%26%20")}`
+    );
+
+  }
 
   return (
     <Box>
@@ -534,68 +548,68 @@ const Navbar2 = () => {
                 alignItems={"start"}
               >
                 <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                  <TextCreate text={"Shampoo & Conditioner"} fontWeight={700} />
+                  <TextCreate text={"Shampoo & Conditioner"} fontWeight={700} category={"Hair"} />
                   <SimpleGrid fontSize={"14px"} spacing={"5px"}>
-                    <TextCreate text={"Shampoo"} />
-                    <TextCreate text={"Conditioner"} />
-                    <TextCreate text={"Scalp Scrub"} />
+                    <TextCreate text={"Shampoo"} category={"Hair"} />
+                    <TextCreate text={"Conditioner"} category={"Hair"} />
+                    <TextCreate text={"Scalp Scrub"} category={"Hair"}/>
                   </SimpleGrid>
                 </SimpleGrid>
 
                 <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                  <TextCreate text={"Treatments"} fontWeight={700} />
+                  <TextCreate text={"Treatments"} fontWeight={700} category={"Hair"}/>
                   <SimpleGrid fontSize={"14px"} spacing={"5px"}>
-                    <TextCreate text={"Hair Masks"} />
-                    <TextCreate text={"Leave-in Conditioner"} />
-                    <TextCreate text={"Hair Oil"} />
-                    <TextCreate text={"Hair Serums"} />
-                    <TextCreate text={"Scalp Treatments"} />
-                    <TextCreate text={"Hair Supplements"} />
-                    <TextCreate text={"Hair Thinning & Hair Loss"} />
+                    <TextCreate text={"Hair Masks"} category={"Hair"}/>
+                    <TextCreate text={"Leave-in Conditioner"} category={"Hair"}/>
+                    <TextCreate text={"Hair Oil"} category={"Hair"}/>
+                    <TextCreate text={"Hair Serums"} category={"Hair"}/>
+                    <TextCreate text={"Scalp Treatments"} category={"Hair"}/>
+                    <TextCreate text={"Hair Supplements"} category={"Hair"}/>
+                    <TextCreate text={"Hair Thinning & Hair Loss"} category={"Hair"}/>
                   </SimpleGrid>
                 </SimpleGrid>
 
                 <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                  <TextCreate text={"Styling"} fontWeight={700} />
+                  <TextCreate text={"Styling"} fontWeight={700} category={"Hair"}/>
                   <SimpleGrid fontSize={"14px"} spacing={"5px"}>
-                    <TextCreate text={"Styling Creams & Sprays"} />
-                    <TextCreate text={"Dry Shampoo"} />
-                    <TextCreate text={"Hair Primers & Heat Protectants"} />
-                    <TextCreate text={"Hair Spray"} />
-                    <TextCreate text={"Mousse & Foam"} />
-                    <TextCreate text={"Gel, Pomade & Wax"} />
+                    <TextCreate text={"Styling Creams & Sprays"} category={"Hair"}/>
+                    <TextCreate text={"Dry Shampoo"} category={"Hair"}/>
+                    <TextCreate text={"Hair Primers & Heat Protectants"} category={"Hair"}/>
+                    <TextCreate text={"Hair Spray"} category={"Hair"}/>
+                    <TextCreate text={"Mousse & Foam"} category={"Hair"}/>
+                    <TextCreate text={"Gel, Pomade & Wax"} category={"Hair"}/>
                   </SimpleGrid>
                 </SimpleGrid>
 
                 <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                  <TextCreate text={"Hair Styling Tools"} fontWeight={700} />
+                  <TextCreate text={"Hair Styling Tools"} fontWeight={700} category={"Hair"}/>
                   <SimpleGrid fontSize={"14px"} spacing={"5px"}>
-                    <TextCreate text={"Hair Dryers"} />
-                    <TextCreate text={"Hair Straighteners & Flat Irons"} />
-                    <TextCreate text={"Blow Dry Brushes"} />
-                    <TextCreate text={"Curling Irons"} />
+                    <TextCreate text={"Hair Dryers"} category={"Hair"}/>
+                    <TextCreate text={"Hair Straighteners & Flat Irons"} category={"Hair"}/>
+                    <TextCreate text={"Blow Dry Brushes"} category={"Hair"}/>
+                    <TextCreate text={"Curling Irons"} category={"Hair"}/>
                   </SimpleGrid>
                 </SimpleGrid>
 
                 <SimpleGrid spacing={"20px"}>
                   <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                    <TextCreate text={"Shop by Concern"} fontWeight={700} />
+                    <TextCreate text={"Shop by Concern"} fontWeight={700} category={"Hair"}/>
                     <SimpleGrid fontSize={"14px"} spacing={"5px"}>
-                      <TextCreate text={"Damaged Hair"} />
-                      <TextCreate text={"Dryness"} />
-                      <TextCreate text={"Frizz"} />
-                      <TextCreate text={"Scalp Care"} />
-                      <TextCreate text={"Volume"} />
-                      <TextCreate text={"Color Care"} />
+                      <TextCreate text={"Damaged Hair"} category={"Hair"}/>
+                      <TextCreate text={"Dryness"} category={"Hair"}/>
+                      <TextCreate text={"Frizz"} category={"Hair"}/>
+                      <TextCreate text={"Scalp Care"} category={"Hair"}/>
+                      <TextCreate text={"Volume"} category={"Hair"}/>
+                      <TextCreate text={"Color Care"} category={"Hair"}/>
                     </SimpleGrid>
                   </SimpleGrid>
 
                   <SimpleGrid spacing={"7px"} cursor={"pointer"}>
-                    <TextCreate text={"Shop by Style"} fontWeight={700} />
+                    <TextCreate text={"Shop by Style"} fontWeight={700} category={"Hair"}/>
                     <SimpleGrid fontSize={"14px"} spacing={"5px"}>
-                      <TextCreate text={"Volume & Texture"} />
-                      <TextCreate text={"Smooth & Sleek"} />
-                      <TextCreate text={"Curl Enhancing"} />
+                      <TextCreate text={"Volume & Texture"} category={"Hair"}/>
+                      <TextCreate text={"Smooth & Sleek"} category={"Hair"}/>
+                      <TextCreate text={"Curl Enhancing"} category={"Hair"}/>
                     </SimpleGrid>
                   </SimpleGrid>
                 </SimpleGrid>

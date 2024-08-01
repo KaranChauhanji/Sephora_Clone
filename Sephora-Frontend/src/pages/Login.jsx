@@ -39,7 +39,7 @@ const Login = () => {
     if (isLogin) {
       toast({
         title: "Login Successful",
-        description: `Congratulations you are login!`,
+        description: `Login Successful.`,
         status: "success",
         duration: 3000,
         isClosable: true,
@@ -48,7 +48,7 @@ const Login = () => {
     } else {
       toast({
         title: "Error",
-        description: "An error occurred while login your account.",
+        description: "Wrong Credentials.",
         status: "error",
         duration: 3000,
         isClosable: true,

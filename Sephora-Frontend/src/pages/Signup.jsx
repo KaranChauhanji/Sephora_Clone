@@ -19,10 +19,12 @@ import {
 import { useState } from "react"; // Import useState for managing form state
 import axios from "axios"; // Import axios for making HTTP requests
 import Login from "./Login";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../Redux/Login/actions";
 
 const Signup = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const dispatch =  useDispatch()
   // State to manage form inputs
   const [formData, setFormData] = useState({
     username: "",
@@ -57,8 +59,9 @@ const Signup = () => {
       return;
     }
 
-    // Send POST request to backend
+
     try {
+
       const response = await axios.post("http://localhost:3000/user/register", {
         username: formData.username,
         email: formData.email,
@@ -67,7 +70,7 @@ const Signup = () => {
         ZIP: formData.zip,
       });
 
-      // Handle success response
+
       if (response.status === 201) {
         toast({
           title: "Account created",
@@ -77,12 +80,14 @@ const Signup = () => {
           isClosable: true,
         });
         onClose();
+        const obj = {email:formData.email, password: formData.password}
+        dispatch(loginUser(obj))
 
         const isAuthUser = { isAuth: true , data: formData.username};
 
         localStorage.setItem("user", JSON.stringify(isAuthUser));
         setFormData({
-          // Reset form data
+
           username: "",
           email: "",
           password: "",

@@ -303,7 +303,9 @@ const Navbar1 = () => {
 
           <Popover trigger="hover">
             {isLogin || data?.isAuth ? (
-              <Button onClick={handleLogout}>Logout</Button>
+              <Button onClick={handleLogout} bgColor={"white"}
+              borderRadius={"none"}
+              _hover={{ bgColor: "white", borderBottom: "2px solid #333" }}>Logout</Button>
             ) : (
               <PopoverTrigger>
                 <Button
