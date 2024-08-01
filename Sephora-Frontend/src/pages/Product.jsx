@@ -22,7 +22,7 @@ const Product = () => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/product/${id}`);
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/product/${id}`);
     
       setData(res.data.Product);
       setSelectedImage(res.data.Product.images[0]);
@@ -56,8 +56,8 @@ const Product = () => {
         throw new Error("Authentication token not found");
       }
 
-      const response = await axios.post(
-        `http://localhost:3000/cart/add/${id}`,
+       await axios.post(
+        `${import.meta.env.VITE_API_URL}/cart/add/${id}`,
         {},
         {
           headers: {

@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 function GetSinglePro({singleData}) {
     const [product,setProduct] = useState(null)
     const getProducts = async (productId) => {
-        const API_URL = `http://localhost:3000/product/${productId}`;
+        const API_URL = `${import.meta.env.VITE_API_URL}/product/${productId}`;
       
         try {
          
@@ -27,7 +27,7 @@ function GetSinglePro({singleData}) {
       const handleRemove =async(id)=>{
         const {token} = JSON.parse(localStorage.getItem("user"));
         try {
-         await axios.delete(`http://localhost:3000/cart/remove/${id}`,{
+         await axios.delete(`${import.meta.env.VITE_API_URL}/cart/remove/${id}`,{
             headers: {
               Authorization: `Bearer ${token}`,
             },

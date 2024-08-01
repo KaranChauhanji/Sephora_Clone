@@ -12,7 +12,7 @@ import {
 import Navbar from "../components/Navbar";
 
 import Footer from "../components/Footer";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartItems } from "../Redux/Cart/action";
 import { Link } from "react-router-dom";

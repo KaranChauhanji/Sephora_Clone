@@ -23,7 +23,7 @@ const Products = () => {
   const fetchData = async () => {
     try {
       const resp = await axios.get(
-        `http://localhost:3000/product?category=${category}`
+        `${import.meta.env.VITE_API_URL}/product?category=${category}`
       );
       console.log(resp.data);
       setData(resp.data.data);

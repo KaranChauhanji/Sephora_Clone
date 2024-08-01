@@ -2,7 +2,7 @@ import axios from "axios";
 import { LOGIN_NOT, LOGIN_SUCCESS } from "./actionTypes";
 
 export const loginUser = (credentials) => async (dispatch) => {
-  const API_URL = "http://localhost:3000/user/login";
+  const API_URL = `${import.meta.env.VITE_API_URL}/user/login`;
 
   try {
     const resp = await axios.post(API_URL, credentials);
