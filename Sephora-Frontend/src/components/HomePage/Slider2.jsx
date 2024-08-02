@@ -1,8 +1,11 @@
-import { Box, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Img, SimpleGrid, Text } from "@chakra-ui/react";
 import Slider from "react-slick";
 import arr from "../../Utils/Homepage/Slider2";
+import { useNavigate } from "react-router-dom";
 
 const Slider2 = () => {
+  const handleNavigation = useNavigate();
+
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -61,6 +64,26 @@ const Slider2 = () => {
     ],
   };
 
+  const handleClick = (elem) => {
+    const category = elem;
+    handleNavigation(`/products`);
+    handleNavigation(
+      `/products?category=${category.replace(" & ", "%20%26%20")}`
+    );
+    onclose();
+  };
+
+  const ImgBox = ({ src, category }) => {
+    return (
+      <Img
+        onClick={() => handleClick(category)}
+        alt="slider"
+        width={"100%"}
+        src={src}
+      />
+    );
+  };
+
   return (
     <Box p={["2", "2", "10", "40"]} pt={[5, 5, 5, 5]} pb={[10, 10, 10, 10]}>
       <Text fontWeight={650} fontSize={"21px"}>
@@ -74,10 +97,10 @@ const Slider2 = () => {
               boxShadow={"base"}
               transition={"all .5s ease"}
               _hover={{ transform: "translateY(-5px)" }}
-              p={['10px','10px','20px',"30px"]}
+              p={["10px", "10px", "20px", "30px"]}
             >
               <Box mb={"10px"} mx={"auto"} w={"150px"}>
-                <img src={elem.image} alt="slider" width={"100%"} />
+                <ImgBox src={elem.image} category={elem.category} />
               </Box>
 
               <Text fontSize={"14px"} fontWeight={700}>

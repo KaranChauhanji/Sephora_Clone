@@ -7,6 +7,7 @@ const slides = [
       "Choose between the Ouai Anti Frizz Creme or the Oribe Dry Texturizing Spray.",
     description:
       "Free with $30 purchase.* Beauty Insider members only. Online only *Exclusions/terms apply.",
+    category: "Gift And Gift Card",
   },
   {
     title: "Get 4X Points††",
@@ -15,6 +16,7 @@ const slides = [
     title2: "on ALL Lancôme.",
     description:
       "Beauty Insider members only. In store & online • Ends 7/31/2024 ††Exclusions/terms apply. May be combined with other promotional offers.",
+    category: "Gift And Gift Card",
   },
   {
     title: "Get 4X Points††",
@@ -23,6 +25,7 @@ const slides = [
     title2: "on ALL Fenty Skin and Fenty Beauty by Rihanna.",
     description:
       "Beauty Insider members only. In store & online • Ends 7/31/2024 ††Exclusions/terms apply. May be combined with other promotional offers.",
+    category: "Gift And Gift Card",
   },
   {
     title: "Free Trial-Size Setting Powder",
@@ -32,6 +35,7 @@ const slides = [
       "Receive a ONE/SIZE by Patrick Starrr setting powder in your choice of two shades.",
     description:
       "Free with $30 purchase.* Beauty Insider members only. Online only *Exclusions/terms apply. ",
+    category: "Gift And Gift Card",
   },
   {
     title: "FREE* Hair-Care Sample Set",
@@ -41,6 +45,7 @@ const slides = [
       "Get a hair sample bag featuring must-try products. Yours with $45 min. spend.",
     description:
       "Free with $45 purchase.* Beauty Insider members only. In store & online *Sample products and quantities may vary. Exclusions/terms apply.",
+    category: "Gift And Gift Card",
   },
   {
     title: "Free Rare Beauty Trial Size",
@@ -49,6 +54,7 @@ const slides = [
     title2: "Blur the look of pores and fine lines with this hydrating primer.",
     description:
       "Free with $30 purchase.* Beauty Insider members only. Online only *Exclusions/terms apply.",
+    category: "Gift And Gift Card",
   },
   {
     title: "Auto-Replenish Hot Deal",
@@ -57,6 +63,7 @@ const slides = [
     title2: "Get 10% off¶ select Farmacy subscription deliveries.",
     description:
       "Limited Time Only Beauty Insider members only. Online only • Ends 8/29/2024 ¶Terms apply.",
+    category: "Gift And Gift Card",
   },
   {
     title: "Pick 1 of 4 Body-Care Trial Sizes",
@@ -66,6 +73,7 @@ const slides = [
       "Get a delightfully decadent formula from Nécessaire, Sol de Janeiro, and more. ",
     description:
       "Free with $30 purchase. Beauty Insider members only. Online only *Exclusions/terms apply.",
+    category: "Gift And Gift Card",
   },
   {
     title: "Get 4X Points††",
@@ -74,6 +82,7 @@ const slides = [
     title2: "on ALL Lancôme.",
     description:
       "Beauty Insider members only. In store & online • Ends 7/31/2024 ††Exclusions/terms apply. May be combined with other promotional offers.",
+    category: "Gift And Gift Card",
   },
   {
     title: "Get 4X Points††",
@@ -82,6 +91,7 @@ const slides = [
     title2: "on ALL Fenty Skin and Fenty Beauty by Rihanna.",
     description:
       "Beauty Insider members only. In store & online • Ends 7/31/2024 ††Exclusions/terms apply. May be combined with other promotional offers.",
+    category: "Gift And Gift Card",
   },
   {
     title: "Auto-Replenish Hot Deal",
@@ -90,6 +100,7 @@ const slides = [
     title2: "Get 10% off¶ select Peter Thomas Roth subscription deliveries.",
     description:
       "Limited Time Only Beauty Insider members only. Online only • Ends 8/19/2024 ¶Terms apply.",
+    category: "Gift And Gift Card",
   },
   {
     title: "Get 10% Off***",
@@ -99,6 +110,7 @@ const slides = [
       "When you sign up for text updates as a new subscriber. Plus, never miss out on exclusive releases, events, and offers.",
     description:
       "Beauty Insider members only.In store & online • Ends 10/25/2024 Message and data rates may apply. New SMS subscribers only. Exclusions/terms apply.",
+    category: "Gift And Gift Card",
   },
   {
     title: "Earn $150 in Credit Card Rewards‡‡",
@@ -108,6 +120,7 @@ const slides = [
       "Open a Sephora Visa Signature® Credit Card between 7/22/24 and 9/25/24.",
     description:
       "In store & online • Ends 9/25/2024 ‡‡Spend $1,500 on it outside Sephora within first 90 days.",
+    category: "Gift And Gift Card",
   },
   {
     title: "A New Beauty Insider Challenge Is Here!",
@@ -116,6 +129,7 @@ const slides = [
     title2: "Complete tasks and earn up to 500 points.",
     description:
       "Beauty Insider members only.In store & online • Ends 7/31/2024^Terms apply.",
+    category: "Gift And Gift Card",
   },
   {
     title: "Try Same-Day Unlimited FREE§ for 30 Days ",
@@ -124,6 +138,7 @@ const slides = [
     title2:
       "The subscription that delivers your beauty in as little as 2 hours—every time you shop.",
     description: "Beauty Insider members only.§Terms apply.",
+    category: "Gift And Gift Card",
   },
   {
     title: "Beauty Insiders Get Free Shipping",
@@ -132,6 +147,7 @@ const slides = [
     title2: "It’s fast, reliable, and applies to every order.",
     description:
       "No code needed • Not a Beauty Insider member? Beauty Insider members only.†Exclusions/terms apply.",
+    category: "Gift And Gift Card",
   },
 ];
 

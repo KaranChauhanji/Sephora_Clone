@@ -23,6 +23,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Signup from "../../pages/Signup";
 import Login from "../../pages/Login";
+import SearchInput from "./SearchInput";
 const Navbar1 = () => {
   const { isLogin } = useSelector((state) => state.loginState);
   const handleNavigation = useNavigate();
@@ -84,7 +85,7 @@ const Navbar1 = () => {
           </Text>
         </Link>
         <Box>
-          <Input placeholder="Search" fontWeight={550} borderRadius={"20px"} />
+          <SearchInput />
         </Box>
         <Flex
           gap={"40px"}

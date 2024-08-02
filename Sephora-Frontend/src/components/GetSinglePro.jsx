@@ -2,7 +2,7 @@ import { Box, Divider, Flex, Img, SimpleGrid, Text } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-function GetSinglePro({ singleData }) {
+function GetSinglePro({ singleData, setAllProducts, allProducts }) {
   const [product, setProduct] = useState(null);
   const getProducts = async (productId) => {
     const API_URL = `${import.meta.env.VITE_API_URL}/product/${productId}`;
@@ -11,6 +11,7 @@ function GetSinglePro({ singleData }) {
       const response = await axios.get(API_URL);
 
       setProduct(response.data.Product);
+      setAllProducts((prevData) => [...prevData, response.data.Product]);
     } catch (error) {
       console.log(error);
     }

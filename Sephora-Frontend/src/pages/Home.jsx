@@ -21,12 +21,12 @@ const Home = () => {
       <Slider3 />
       <Slider4 />
       <Section1 />
-      <Slider5/>
-      <Divider w={'80%'} m={"auto"}/>
-      <Section2/>
-      <Divider w={'80%'} m={"auto"}/>
-      <Section3/>
-      <Divider w={'80%'} m={"auto"}/>
+      <Slider5 />
+      <Divider w={"80%"} m={"auto"} />
+      <Section2 />
+      <Divider w={"80%"} m={"auto"} />
+      <Section3 />
+      <Divider w={"80%"} m={"auto"} />
 
       <Section4 />
       <Footer />

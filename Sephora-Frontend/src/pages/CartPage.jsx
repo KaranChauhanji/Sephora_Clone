@@ -12,27 +12,53 @@ import {
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartItems } from "../Redux/Cart/action";
 import { Link } from "react-router-dom";
 import GetSinglePro from "../components/GetSinglePro";
+import axios from "axios";
 
 const CartPage = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.cartData);
   const { loading } = useSelector((state) => state.loading);
-
-  const subtotal = data.reduce((acc, item) => {
-    const price = parseFloat(item.price) || 0; // Convert to number and fallback to 0
-    return acc + price;
-  }, 0);
-  const estimatedTax = subtotal * 0.08;
-  const estimatedTotal = subtotal + estimatedTax;
+  const [allProducts, setAllProducts] = useState([]);
 
   useEffect(() => {
     dispatch(getCartItems);
   }, [dispatch]);
+
+  const subtotal = allProducts.reduce((acc, item) => {
+    const price = parseFloat(item.price) || 0;
+    return acc + price;
+  }, 0);
+
+  const estimatedTax = subtotal * 0.08;
+  const estimatedTotal = subtotal + estimatedTax;
+
+  const handleCheckout = async () => {
+    const { token } = JSON.parse(localStorage.getItem("user"));
+    try {
+      await Promise.all(
+        data?.map(async (el) => {
+          await axios.delete(
+            `${import.meta.env.VITE_API_URL}/cart/remove/${el.productId}`,
+            {
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+        })
+      );
+
+      window.location.reload();
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   useEffect(() => {
     window.scroll({
@@ -67,7 +93,14 @@ const CartPage = () => {
                 />
               </Flex>
             ) : data && data.length > 0 ? (
-              data.map((elem, i) => <GetSinglePro singleData={elem} key={i} />)
+              data.map((elem, i) => (
+                <GetSinglePro
+                  singleData={elem}
+                  key={i}
+                  setAllProducts={setAllProducts}
+                  allProducts={allProducts}
+                />
+              ))
             ) : (
               <Box mt={5}>
                 <Divider mb={10} bg={"grey"} h={0.8} />
@@ -147,7 +180,7 @@ const CartPage = () => {
                 w={"100%"}
                 fontWeight={400}
                 bg={"black"}
-                // onClick={handleCheckout}
+                onClick={handleCheckout}
               >
                 Checkout
               </Button>

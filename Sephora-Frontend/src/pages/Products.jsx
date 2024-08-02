@@ -149,6 +149,7 @@ const Products = () => {
                   _hover={{ textDecoration: "underline" }}
                   overflow={"hidden"}
                   h={"40px"}
+                  onClick={() => handleClick(elem._id)}
                 >
                   {elem.description}
                 </Text>

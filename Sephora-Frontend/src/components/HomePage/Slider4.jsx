@@ -1,8 +1,11 @@
 import { Box, Button, Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import Slider from "react-slick";
 import slides from "../../Utils/Homepage/Slider4";
+import { useNavigate } from "react-router-dom";
 
 const Slider4 = () => {
+  const handleNavigation = useNavigate();
+
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -71,6 +74,29 @@ const Slider4 = () => {
     ],
   };
 
+  const handleClick = (elem) => {
+    const category = elem;
+    handleNavigation(`/products`);
+    handleNavigation(
+      `/products?category=${category.replace(" & ", "%20%26%20")}`
+    );
+    onclose();
+  };
+
+  const ButtonBox = ({ text, category }) => {
+    return (
+      <Button
+        border={"1px solid black"}
+        bgColor={"white"}
+        color={"black"}
+        borderRadius={"20px"}
+        onClick={() => handleClick(category)}
+      >
+        {text}
+      </Button>
+    );
+  };
+
   return (
     <Box p={["2", "7", "10", "40"]} pt={[5, 5, 5, 5]} pb={[10, 10, 10, 10]}>
       <Text fontWeight={650} fontSize={"21px"}>
@@ -103,14 +129,7 @@ const Slider4 = () => {
                 </SimpleGrid>
 
                 <Flex alignItems={"end"}>
-                  <Button
-                    border={"1px solid black"}
-                    bgColor={"white"}
-                    color={"black"}
-                    borderRadius={"20px"}
-                  >
-                    Apply
-                  </Button>
+                  <ButtonBox text={"Apply"} category={elem.category} />
                 </Flex>
               </SimpleGrid>
             </SimpleGrid>
