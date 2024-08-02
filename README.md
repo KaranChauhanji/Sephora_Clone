@@ -44,27 +44,27 @@ You can view the deployed project here: [Sephora Clone](https://sephora-clone-pi
 
 ### Homepage
 
-![Homepage](./images/homepage.png)
+![Homepage](https://raw.githubusercontent.com/KaranChauhanji/Sephora_Clone/94fa2654fe3ed212edb1318223fdd86dfad7b4a4/Sephora-Frontend/public/Home.png)
 
 ### Multiproduct Page
 
-![Multiproduct Page](./images/multiproduct-page.png)
+![Multiproduct Page](https://raw.githubusercontent.com/KaranChauhanji/Sephora_Clone/94fa2654fe3ed212edb1318223fdd86dfad7b4a4/Sephora-Frontend/public/multi.png)
 
 ### Single Product Page
 
-![Single Product Page](./images/single-product-page.png)
+![Single Product Page](https://raw.githubusercontent.com/KaranChauhanji/Sephora_Clone/94fa2654fe3ed212edb1318223fdd86dfad7b4a4/Sephora-Frontend/public/single.png)
 
 ### Cart Page
 
-![Cart Page](./images/cart-page.png)
+![Cart Page](https://raw.githubusercontent.com/KaranChauhanji/Sephora_Clone/94fa2654fe3ed212edb1318223fdd86dfad7b4a4/Sephora-Frontend/public/cart.png)
 
 ### Login Page
 
-![Login Page](./images/login-page.png)
+![Login Page](https://raw.githubusercontent.com/KaranChauhanji/Sephora_Clone/94fa2654fe3ed212edb1318223fdd86dfad7b4a4/Sephora-Frontend/public/Login.png)
 
 ### Signup Page
 
-![Signup Page](./images/signup-page.png)
+![Signup Page](https://raw.githubusercontent.com/KaranChauhanji/Sephora_Clone/94fa2654fe3ed212edb1318223fdd86dfad7b4a4/Sephora-Frontend/public/signup.png)
 
 ## Installation 🏗️
 
@@ -73,7 +73,7 @@ To get started with this project locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone <https://github.com/KaranChauhanji/Sephora_Clone.git>
+   git clone https://github.com/KaranChauhanji/Sephora_Clone.git
 
 2. Navigate to the project directory:
 
