@@ -1,10 +1,12 @@
-# Sephora Clone
+# Sephora Clone 🌟
 
 ## About the Project
 
-Sephora Clone is a full-stack e-commerce website built using the MERN stack. This project is designed to replicate the user experience of the Sephora website, providing a seamless and interactive interface for users to browse, search, and purchase beauty products. It includes both frontend and backend components, offering a fully responsive and pleasant user interface.
+Sephora Clone is a full-stack e-commerce website built using the MERN stack. This project replicates the user experience of the Sephora website, providing a seamless and interactive interface for users to browse, search, and purchase beauty products. It includes both frontend and backend components, offering a fully responsive and pleasant user interface.
 
-## Tech Stack
+You can view the deployed project here: [Sephora Clone](https://sephora-clone-pi.vercel.app/) 🚀
+
+## Tech Stack 🛠️
 
 - **Frontend**: React, Chakra UI
 - **State Management**: Redux
@@ -13,7 +15,7 @@ Sephora Clone is a full-stack e-commerce website built using the MERN stack. Thi
 - **Authentication**: bcrypt, JWT
 - **Packages**: npm (e.g., react-slick for carousels)
 
-## Features
+## Features ✨
 
 - **Great UI**: Designed with Chakra UI for a modern and responsive layout.
 - **Proper Routing**: Implemented to ensure smooth navigation between pages.
@@ -25,19 +27,20 @@ Sephora Clone is a full-stack e-commerce website built using the MERN stack. Thi
 - **Cart Page**: Allows users to view and manage their selected items.
 - **Login and Signup**: Secure authentication with JWT and password hashing with bcrypt.
 
-## Frontend
+## Frontend 🖥️
 
 - Utilized **React** and **Chakra UI** to create a visually appealing and responsive user interface.
 - Managed application states (login, cart, loading) using **Redux**.
 - Implemented various packages via **npm**, including `react-slick` for carousel functionality.
 
-## Backend
+## Backend ⚙️
 
 - Developed server-side logic using **Node.js** and **Express**.
 - Used **bcrypt** for password hashing and **JWT** for token-based authentication.
 - **MongoDB** serves as the database to store user and product data.
+- Sensitive information such as `MONGO_URL` and `JWT_SECRET` is protected using a `.env` file.
 
-## Images
+## Images 🖼️
 
 ### Homepage
 
@@ -63,11 +66,42 @@ Sephora Clone is a full-stack e-commerce website built using the MERN stack. Thi
 
 ![Signup Page](./images/signup-page.png)
 
-## Installation
+## Installation 🏗️
 
 To get started with this project locally, follow these steps:
 
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/KaranChauhanji/Sephora_Clone.git>
+
+2. Navigate to the project directory:
+
+   ```bash
+    cd sephora-clone
+
+3. Install the dependencies for both frontend and backend:
+
+   ```bash
+   cd Sephora-Frontend
+   npm install
+   cd ../Sephora-Backend
+   npm install
+
+4. Create a .env file in the backend directory and add the following environment variables:
+
+   ```bash
+    MONGO_URL=<your-mongodb-url>
+    JWT_SECRET=<your-jwt-secret>
+
+5. Start the backend server:
+
+   ```bash
+    npm start
+
+6. Start the frontend server:
+
+    ```bash
+    cd Sephora-Frontend
+    npm run dev
+    
