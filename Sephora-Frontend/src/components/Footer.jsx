@@ -23,7 +23,7 @@ const Footer = () => {
         fontSize={"14px"}
         fontWeight={700}
         textAlign={"center"}
-        mt={'30px'}
+        mt={"30px"}
         p={"10px"}
       >
         {" "}
@@ -109,7 +109,7 @@ const Footer = () => {
           display={["none", "none", "none", "block"]}
         />
 
-        <SimpleGrid columns={[1, 1, 1, 2]} spacing={'30px'}>
+        <SimpleGrid columns={[1, 1, 1, 2]} spacing={"30px"}>
           <SimpleGrid columns={3} display={["none", "none", "none", "grid"]}>
             <SimpleGrid spacing={"7px"} cursor={"pointer"}>
               <Text fontSize={"15px"} fontWeight={700}>
@@ -244,10 +244,14 @@ const Footer = () => {
             </SimpleGrid>
           </SimpleGrid>
 
-          <Accordion allowToggle my={"20px"} display={['block','block','block','none']}>
+          <Accordion
+            allowToggle
+            my={"20px"}
+            display={["block", "block", "block", "none"]}
+          >
             <AccordionItem>
               <h2>
-                <AccordionButton py={'20px'}>
+                <AccordionButton py={"20px"}>
                   <Box as="span" flex="1" textAlign="left">
                     About Sephora
                   </Box>
@@ -275,7 +279,7 @@ const Footer = () => {
 
             <AccordionItem>
               <h2>
-                <AccordionButton py={'20px'}>
+                <AccordionButton py={"20px"}>
                   <Box as="span" flex="1" textAlign="left">
                     My Sephora
                   </Box>
@@ -303,7 +307,7 @@ const Footer = () => {
 
             <AccordionItem>
               <h2>
-                <AccordionButton py={'20px'}>
+                <AccordionButton py={"20px"}>
                   <Box as="span" flex="1" textAlign="left">
                     Help
                   </Box>
@@ -387,19 +391,18 @@ const Footer = () => {
               </Flex>
             </SimpleGrid>
 
-            <Divider display={['block','block','block','none']}/>
+            <Divider display={["block", "block", "block", "none"]} />
 
-            <SimpleGrid alignContent={"space-between"} spacing={'30px'}>
-              <Box fontSize={['22px','22px','28px',"28px"]} fontFamily={"georgia, times, serif"}>
-                <Text >
-                  We Belong to
-                </Text>
-                <Text>
-                  Something Beautiful
-                </Text>
+            <SimpleGrid alignContent={"space-between"} spacing={"30px"}>
+              <Box
+                fontSize={["22px", "22px", "28px", "28px"]}
+                fontFamily={"georgia, times, serif"}
+              >
+                <Text>We Belong to</Text>
+                <Text>Something Beautiful</Text>
               </Box>
 
-              <SimpleGrid spacing={"20px"} >
+              <SimpleGrid spacing={"20px"}>
                 <SimpleGrid spacing={"7px"}>
                   <Text fontSize={"14px"} fontWeight={700}>
                     Sign up for Sephora text updates
@@ -449,45 +452,67 @@ const Footer = () => {
             </SimpleGrid>
           </SimpleGrid>
         </SimpleGrid>
-        <Divider/>
+        <Divider />
 
+        <SimpleGrid
+          justifyContent={"space-between"}
+          gridTemplateColumns={["1fr", "1fr", "1fr", "repeat(2,1fr)"]}
+          w={"100%"}
+          spacing={"20px"}
+        >
+          <SimpleGrid fontSize={"12px"} fontWeight={400} gap={"12px"}>
+            <Text>© 2024 Sephora USA, Inc. All rights reserved.</Text>
+            <Flex gap={"8px"} flexWrap={"wrap"}>
+              <Text>Privacy Policy</Text>
+              <Text>Terms of Use</Text>
+              <Text>Accessibility</Text>
+              <Text>Sitemap</Text>
+              <Flex alignItems={"center"} gap={"5px"}>
+                <Text>Your Privacy Choices</Text>
+                <Box w={"20px"}>
+                  {" "}
+                  <Img
+                    src="https://www.sephora.com/img/ufe/icons/opt-out.svg"
+                    w={"100%"}
+                  />
+                </Box>
+              </Flex>
+            </Flex>
+            <Flex gap={"10px"}>
+              <Text>1-877-737-4672 </Text>
+              <Text>TTY: 1-888-866-9845 </Text>
+            </Flex>
+          </SimpleGrid>
 
-<SimpleGrid justifyContent={'space-between'} gridTemplateColumns={['1fr','1fr','1fr','repeat(2,1fr)']} w={'100%'} spacing={'20px'}>
+          <Divider display={["block", "block", "block", "none"]} />
 
-<SimpleGrid fontSize={'12px'} fontWeight={400} gap={'12px'}>
-  <Text>© 2024 Sephora USA, Inc. All rights reserved.</Text>
-  <Flex gap={'8px'} flexWrap={'wrap'}>
-  <Text>Privacy Policy</Text>
-  <Text>Terms of Use</Text>
-  <Text>Accessibility</Text>
-  <Text>Sitemap</Text>
-  <Flex alignItems={"center"} gap={'5px'}><Text>Your Privacy Choices</Text><Box w={'20px'}> <Img src="https://www.sephora.com/img/ufe/icons/opt-out.svg" w={'100%'}/></Box></Flex>
-  </Flex>
-  <Flex gap={'10px'}>
-
-  <Text>1-877-737-4672 </Text>
-  <Text>TTY: 1-888-866-9845 </Text>
-  </Flex>
-</SimpleGrid>
-
-<Divider display={['block','block','block','none']} />
-
-
-<Flex justifyContent={['center','center','center','end']} gap={'12px'}>
-  <Box><Img src="https://www.sephora.com/img/ufe/icons/instagram-ko.svg"/></Box>
-  <Box><Img src="https://www.sephora.com/img/ufe/icons/facebook-ko.svg"/></Box>
-  <Box><Img src="https://www.sephora.com/img/ufe/icons/twitter-ko.svg"/></Box>
-  <Box><Img src="https://www.sephora.com/img/ufe/icons/youtube-ko.svg"/></Box>
-  <Box><Img src="https://www.sephora.com/img/ufe/icons/pinterest-ko.svg"/></Box>
-  <Box><Img src="https://www.sephora.com/img/ufe/icons/snapchat-ko.svg"/></Box>
-  <Box><Img src="https://www.sephora.com/img/ufe/icons/tiktok-ko.svg"/></Box>
-</Flex>
-
-
-</SimpleGrid>
-        
-
-
+          <Flex
+            justifyContent={["center", "center", "center", "end"]}
+            gap={"12px"}
+          >
+            <Box>
+              <Img src="https://www.sephora.com/img/ufe/icons/instagram-ko.svg" />
+            </Box>
+            <Box>
+              <Img src="https://www.sephora.com/img/ufe/icons/facebook-ko.svg" />
+            </Box>
+            <Box>
+              <Img src="https://www.sephora.com/img/ufe/icons/twitter-ko.svg" />
+            </Box>
+            <Box>
+              <Img src="https://www.sephora.com/img/ufe/icons/youtube-ko.svg" />
+            </Box>
+            <Box>
+              <Img src="https://www.sephora.com/img/ufe/icons/pinterest-ko.svg" />
+            </Box>
+            <Box>
+              <Img src="https://www.sephora.com/img/ufe/icons/snapchat-ko.svg" />
+            </Box>
+            <Box>
+              <Img src="https://www.sephora.com/img/ufe/icons/tiktok-ko.svg" />
+            </Box>
+          </Flex>
+        </SimpleGrid>
       </SimpleGrid>
     </footer>
   );

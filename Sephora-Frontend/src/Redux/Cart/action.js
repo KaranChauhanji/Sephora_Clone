@@ -1,16 +1,16 @@
 import axios from "axios";
 import { CARTITEMS } from "./actionTypes";
-import { IS_LOADING, NO_LOADING } from "../Loading/actionTypes";
+import { IS_LOADING, NO_LOADING, ERROR } from "../Loading/actionTypes";
 
 export const getCartItems = async (dispatch) => {
   const API_URL = `${import.meta.env.VITE_API_URL}/cart`;
   dispatch({ type: IS_LOADING });
 
-
   try {
-    const {token} = JSON.parse(localStorage.getItem("user"));
+    const { token } = JSON.parse(localStorage.getItem("user"));
     if (!token) {
       console.error("Token not found");
+      dispatch({ type: ERROR });
       return;
     }
 
@@ -19,12 +19,11 @@ export const getCartItems = async (dispatch) => {
         Authorization: `Bearer ${token}`,
       },
     });
-   
+
     dispatch({ type: CARTITEMS, payload: response.data.items });
     dispatch({ type: NO_LOADING });
   } catch (error) {
     console.log(error);
-  } finally {
-    dispatch({ type: NO_LOADING });
+    dispatch({ type: ERROR });
   }
 };

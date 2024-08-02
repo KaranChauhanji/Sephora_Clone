@@ -19,17 +19,42 @@ import { BiBell, BiCurrentLocation, BiMessage } from "react-icons/bi";
 import { HiOutlineBuildingStorefront } from "react-icons/hi2";
 import { HiOutlineUserGroup } from "react-icons/hi2";
 import { PiBasketLight } from "react-icons/pi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Signup from "../../pages/Signup";
 import Login from "../../pages/Login";
 const Navbar1 = () => {
   const { isLogin } = useSelector((state) => state.loginState);
+  const handleNavigation = useNavigate();
+
   const data = JSON.parse(localStorage.getItem("user"));
 
   const handleLogout = () => {
     localStorage.clear();
     window.location.reload();
+  };
+
+  const handleClick = (elem) => {
+    const category = elem;
+    handleNavigation(`/products`);
+    handleNavigation(
+      `/products?category=${category.replace(" & ", "%20%26%20")}`
+    );
+    onclose();
+  };
+
+  const TextCreate = ({ text, fontWeight, category }) => {
+    return (
+      <Text
+        _hover={{ textDecoration: "underline" }}
+        fontWeight={fontWeight}
+        fontSize={"14px"}
+        onClick={() => handleClick(category)}
+        cursor={"pointer"}
+      >
+        {text}
+      </Text>
+    );
   };
 
   return (
@@ -303,9 +328,14 @@ const Navbar1 = () => {
 
           <Popover trigger="hover">
             {isLogin || data?.isAuth ? (
-              <Button onClick={handleLogout} bgColor={"white"}
-              borderRadius={"none"}
-              _hover={{ bgColor: "white", borderBottom: "2px solid #333" }}>Logout</Button>
+              <Button
+                onClick={handleLogout}
+                bgColor={"white"}
+                borderRadius={"none"}
+                _hover={{ bgColor: "white", borderBottom: "2px solid #333" }}
+              >
+                Logout
+              </Button>
             ) : (
               <PopoverTrigger>
                 <Button
@@ -459,7 +489,10 @@ const Navbar1 = () => {
 
           <Popover>
             <PopoverTrigger>
-              <HamburgerIcon display={["block", "block", "block", "none"]} />
+              <HamburgerIcon
+                display={["block", "block", "block", "none"]}
+                cursor={"pointer"}
+              />
             </PopoverTrigger>
             <PopoverContent>
               <PopoverHeader
@@ -472,14 +505,20 @@ const Navbar1 = () => {
               </PopoverHeader>
               <PopoverBody>
                 <SimpleGrid spacing={"12px"}>
-                  <Text>Makeup</Text>
-                  <Text>Skincare</Text>
-                  <Text>Hair</Text>
-                  <Text>Fragrance</Text>
-                  <Text>Tools & Brushes</Text>
-                  <Text>Bath & Body</Text>
-                  <Text>Gifts & Gift Cards</Text>
-                  <Text>Sales & Offers</Text>
+                  <TextCreate text={"Makeup"} category={"Makeup"} />
+                  <TextCreate text={"Skincare"} category={"Skincare"} />
+                  <TextCreate text={"Hair"} category={"Hair"} />
+                  <TextCreate text={"Fragrance"} category={"Makeup"} />
+                  <TextCreate
+                    text={"Tools &Brushes"}
+                    category={"Tools&Brushes"}
+                  />
+                  <TextCreate text={"Bath & Body"} category={"Bath And Body"} />
+                  <TextCreate
+                    text={"Gifts & Gift Cards"}
+                    category={"Gift And Gift Card"}
+                  />
+                  <TextCreate text={"Sales & Offers"} category={"Hair"} />
                 </SimpleGrid>
               </PopoverBody>
             </PopoverContent>

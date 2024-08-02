@@ -7,25 +7,38 @@ import {
   Img,
   SimpleGrid,
   Text,
+  Spinner,
 } from "@chakra-ui/react";
 
 import Navbar from "../components/Navbar";
-
 import Footer from "../components/Footer";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartItems } from "../Redux/Cart/action";
 import { Link } from "react-router-dom";
 import GetSinglePro from "../components/GetSinglePro";
-const CartPage = () => {
 
-  
-  const dispatch = useDispatch()
-  const data = useSelector((state)=>state.cartData)
-  const {loading} = useSelector((state)=>state.loading)
-  
+const CartPage = () => {
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.cartData);
+  const { loading } = useSelector((state) => state.loading);
+
+  const subtotal = data.reduce((acc, item) => {
+    const price = parseFloat(item.price) || 0; // Convert to number and fallback to 0
+    return acc + price;
+  }, 0);
+  const estimatedTax = subtotal * 0.08;
+  const estimatedTotal = subtotal + estimatedTax;
+
   useEffect(() => {
-    dispatch(getCartItems)
+    dispatch(getCartItems);
+  }, [dispatch]);
+
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      behavior: "instant",
+    });
   }, []);
 
   return (
@@ -45,12 +58,16 @@ const CartPage = () => {
           ]}
           alignItems={"start"}
         >
-            <SimpleGrid gap={2}>
-            {data ? (
-              data.map((elem,i) => (
-                <GetSinglePro singleData={elem} key={i}/>
-               
-              ))
+          <SimpleGrid gap={2}>
+            {loading ? (
+              <Flex justifyContent="center" alignItems="center" minH="50vh">
+                <Img
+                  src="https://www.sephora.com/img/ufe/loader.gif"
+                  alt={<Spinner />}
+                />
+              </Flex>
+            ) : data && data.length > 0 ? (
+              data.map((elem, i) => <GetSinglePro singleData={elem} key={i} />)
             ) : (
               <Box mt={5}>
                 <Divider mb={10} bg={"grey"} h={0.8} />
@@ -63,7 +80,7 @@ const CartPage = () => {
                   <Button
                     mb={4}
                     _hover={{ color: "white" }}
-                    bg={"#296293"}
+                    bg={"black"}
                     color={"white"}
                   >
                     Continue Shopping
@@ -105,11 +122,11 @@ const CartPage = () => {
             <Box p={4} fontWeight={400} border={"1px solid rgba(0,0,0,0.3)"}>
               <Flex mb={4} justifyContent={"space-between"}>
                 <Text>Subtotal</Text>
-                <Text>00.00</Text>
+                <Text>${subtotal}</Text>
               </Flex>
               <Flex mb={3} fontSize={"14px"} justifyContent={"space-between"}>
                 <Text>Estimated Tax</Text>
-                <Text>$0.00</Text>
+                <Text>${estimatedTax}</Text>
               </Flex>
               <Divider mb={3} bg={"grey"} />
               <Flex
@@ -119,7 +136,7 @@ const CartPage = () => {
                 fontWeight={700}
               >
                 <Text>Estimated Total</Text>
-                <Text>$00.00</Text>
+                <Text>${estimatedTotal}</Text>
               </Flex>
               <Text mb={2} fontSize={"14px"} color={"rgb(112,112,112)"}>
                 Applicable taxes will be calculated at checkout.
@@ -130,6 +147,7 @@ const CartPage = () => {
                 w={"100%"}
                 fontWeight={400}
                 bg={"black"}
+                // onClick={handleCheckout}
               >
                 Checkout
               </Button>

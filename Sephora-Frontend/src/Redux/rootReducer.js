@@ -6,7 +6,7 @@ import { loadingReducer } from "./Loading/reducer";
 const rootReducer = combineReducers({
   loginState: loginReducer,
   cartData: cartReducer,
-  loading: loadingReducer
+  loading: loadingReducer,
 });
 
 export default rootReducer;

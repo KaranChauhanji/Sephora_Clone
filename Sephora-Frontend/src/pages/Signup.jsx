@@ -16,16 +16,15 @@ import {
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
-import { useState } from "react"; // Import useState for managing form state
-import axios from "axios"; // Import axios for making HTTP requests
+import { useState } from "react";
+import axios from "axios";
 import Login from "./Login";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../Redux/Login/actions";
 
 const Signup = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const dispatch =  useDispatch()
-  // State to manage form inputs
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -35,7 +34,7 @@ const Signup = () => {
     zip: "",
   });
 
-  const toast = useToast(); // Toast for displaying notifications
+  const toast = useToast();
 
   // Handle input changes
   const handleChange = (e) => {
@@ -43,11 +42,9 @@ const Signup = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();
 
-    // Check if password and confirmPassword match
     if (formData.password !== formData.confirmPassword) {
       toast({
         title: "Password mismatch",
@@ -59,17 +56,17 @@ const Signup = () => {
       return;
     }
 
-
     try {
-
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/user/register`, {
-        username: formData.username,
-        email: formData.email,
-        password: formData.password,
-        phone: formData.phone,
-        ZIP: formData.zip,
-      });
-
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/user/register`,
+        {
+          username: formData.username,
+          email: formData.email,
+          password: formData.password,
+          phone: formData.phone,
+          ZIP: formData.zip,
+        }
+      );
 
       if (response.status === 201) {
         toast({
@@ -80,14 +77,13 @@ const Signup = () => {
           isClosable: true,
         });
         onClose();
-        const obj = {email:formData.email, password: formData.password}
-        dispatch(loginUser(obj))
+        const obj = { email: formData.email, password: formData.password };
+        dispatch(loginUser(obj));
 
-        const isAuthUser = { isAuth: true , data: formData.username};
+        const isAuthUser = { isAuth: true, data: formData.username };
 
         localStorage.setItem("user", JSON.stringify(isAuthUser));
         setFormData({
-
           username: "",
           email: "",
           password: "",
@@ -197,7 +193,7 @@ const Signup = () => {
                   color={"white"}
                   borderRadius={"20px"}
                   _hover={{ bgColor: "grey" }}
-                  type="submit" // Make button a submit button
+                  type="submit"
                 >
                   Join Now
                 </Button>
